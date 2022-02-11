@@ -1,0 +1,459 @@
+* {
+	margin: 0 auto;
+	padding: none;
+}
+
+:root {
+    --incorrect: #787c7e;
+    --guessed: #c9b458;
+    --solved: #6aaa64;
+    --unused: #d3d6da;
+    --accent:  #878a8c;
+}
+
+
+* {
+	text-transform: uppercase;
+	font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+
+}
+
+body {
+	height: 100vh;
+}
+
+.background-image {
+	background-image: url("img/herm1.jpg");
+	opacity: 0;
+}
+
+header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	border-bottom: 1px solid var(--unused);
+
+	width: 75vh;
+	margin: auto;
+
+	margin-bottom: 1.5vh;
+}
+
+.left-icons, .right-icons {
+	flex-basis:  13vh;
+	margin: 6vh, 0;
+}
+
+h1 {
+	flex-grow: 6;
+
+	font-size: 36px;
+	font-weight: 700;
+	letter-spacing: .5vh;
+
+	text-align: center;
+	margin: auto;
+}
+
+.right-icons {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+
+#board {
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	margin-bottom: 1vh;
+}
+
+.row {
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.letterBox {
+	color:  black;
+	background-color: white;
+	border: 2px solid var(--unused);
+
+	font-size: 5vh;
+	font-weight: bold;
+
+	height: 8.5vh;
+	width: 8.5vh;
+	margin: .4vh;
+
+	display: flex;
+
+}
+
+.letter {
+	margin: auto;
+}
+
+.key {
+	background-color: var(--unused);
+	border: none;
+	border-radius: 10%;
+
+	height: 8.75vh;
+	width:  6.5vh;
+	margin: .4vh .4vh;
+
+	font-weight: bold;
+}
+
+.key:active {
+	background-color: var(--accent);
+}
+
+#keyboard {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+
+	margin-bottom: 2vh;
+}
+
+
+.big {
+	width:  11vh;
+}
+
+.keyboardRow {
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+
+
+
+
+/*!!!!!!!!!!!!!! Toggle-ables !!!!!!!!!!!!!!!!!!*/
+
+.in-progress {
+	border-color: var(--accent);
+}
+
+.incorrect {
+	background-color: var(--incorrect);
+	border:  2px solid var(--incorrect);
+	color: white;
+	opacity: 1;
+}
+
+.guessed {
+	background-color: var(--guessed);
+	border:  2px solid var(--guessed);
+	color: white;
+	opacity: 1;
+}
+
+.solved {
+	background-color: var(--solved);
+	border:  2px solid var(--solved);
+	color: white;
+	opacity: 1;
+}
+
+.tiny {
+	width: 0px !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: none !important;
+}
+
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ICONS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+.icon {
+	height: 4vh;
+	width: 4vh;
+	background-size: cover;
+	opacity: 50%;
+}
+
+.questionMark {
+	background-image: url(img/questionMark.png);
+}
+
+.bar-chart {
+	background-image: url(img/barChart.png);
+	margin-right: 1vh;
+}
+
+.gear {
+	background-image: url(img/gear.png);
+}	
+
+.backspace .icon {
+	opacity: 100%;
+	height: 4vh;
+	width: 4vh;
+	background-size: cover;
+	background-image: url(img/backspace.png);
+}
+
+
+
+
+
+
+/* Extra small devices (phones, 600px and down) */
+/*@media only screen and (max-width: 600px) {
+	header {
+		width: 100vw;
+		height: 3.5vh;
+	}
+
+	.letterBox {
+		font-size: 4vh;
+
+		height: 6.5vh;
+		width: 6.5vh;
+		margin: .25vh;
+
+	}
+
+	.key {
+		font-size: 1.4vh;
+
+		height: 6.75vh;
+		width:  3.9vh;
+		margin: .25vh;
+	}
+
+	.big {
+		width: 6vh;
+	}
+
+	.background-image { 
+		background-size: cover;
+	}
+
+	.icon {
+		height: 3vh;
+		width: 3vh;
+	}
+
+	.left-icons, .right-icons {
+		flex-basis:  7vh;
+		margin: 6vh, 0;
+	}
+
+}
+*/
+
+
+/* Super small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	body {
+		height: 100vh;
+	}
+
+	header {
+		width: 100vw;
+		height: 6.5vh;
+		margin-bottom: 1vh;
+	}
+
+	#board {
+		margin-bottom: .5vh;
+	}
+
+	.letterBox {
+		font-size: 4vh;
+
+		height: 6.8vh;
+		width: 6.8vh;
+		margin: .23vh;
+
+	}
+
+	.key {
+		font-size: 1.4vh;
+
+		height: 8.5vh;
+		width:  8.3vw;
+		margin: .5vh .7vw;
+	}
+
+	.big {
+		width: 12vw;
+	}
+
+	.background-image { 
+		background-size: cover;
+	}
+
+	.icon {
+		height: 3vh;
+		width: 3vh;
+	}
+
+	.left-icons, .right-icons {
+		flex-basis:  7vh;
+		margin: 6vh, 0;
+	}
+
+}
+
+
+
+
+
+
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! WORMLE MODE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+.hermes .background-image {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	z-index: -1;
+
+	transition: opacity 2s linear;
+	opacity: 1;
+}
+
+
+.hermes h1 {
+	color: white;
+}
+
+.hermes .left-icons, .hermes .right-icons { 
+	filter: invert(100%);
+}
+
+.hermes .slightly-bigger {
+	transform: scale(1.2);
+}
+
+/*.hermes .letterBox .in-progress{
+	opacity: .8;
+	transition: opacity 2s linear;
+}*/
+
+
+
+
+
+
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ANIMATIONS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+.flip-card:hover {
+    /*animation: flip .3s linear 1;*/
+}
+
+.wrong {
+	 animation: shake 0.3s;
+}
+
+.flip {
+	animation: flip .3s linear 1;
+}
+
+.jump {
+	animation: jump .4s linear 1;
+}
+
+.pulse {
+	animation: pulse .2s linear 1;
+}
+
+.multiPulse {
+	display: inline-block;
+	animation: bigPulse .3s linear 3;
+}
+
+.fadeIn {
+	transition: all 0.5 ease;
+	animation: fadeIn linear .3s 1;
+}
+
+.opacity-flicker {
+	animation: opacityFlicker linear 1.5s 1;
+}
+
+.flicker {
+	animation: flicker linear 1s 1;
+}
+
+
+@keyframes flicker{
+	0% 	 	 {background-color: black; }
+	20% 	 {background-color: white; }
+	40% 	 {background-color: black; }
+	60% 	 {background-color: white; }
+	80% 	 {background-color: black; }
+	100% 	 {background-color: white; }
+}
+
+@keyframes opacityFlicker{
+	0% 	 {opacity: 1; }
+	50%  {opacity: .2; }
+	85%  {opacity: .2; }
+  	100% { opacity: 1;}
+}
+
+@keyframes fadeIn{
+	0% 	 {width: 1px; }
+  	100% { width: 8.5vh; }
+}
+
+
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+
+@keyframes flip { 
+	100% { transform: scaleX(-1);} 
+}
+
+
+@keyframes jump { 
+	50% { transform: translate(0%, -50%);} 
+	100% { transform: translate(0%, 0%);} 
+}
+
+@keyframes pulse {
+	50% { transform: scale(1.2); }
+	100% { transform: scale(1.0); }
+}
+
+@keyframes bigPulse {
+	50% { transform: scale(1.4); }
+	100% { transform: scale(1.0); }
+}
+
+
+/*Animation taken from W3Schools https://www.w3schools.com/howto/howto_css_shake_image.asp*/
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
